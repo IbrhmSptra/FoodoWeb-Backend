@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 const dotenv = require("dotenv");
 dotenv.config();
-const port = 3000;
+const port = process.env.PORT | 3000;
 const apiRoutes = require("./src/routes/apiRoutes");
 const authRoutes = require("./src/routes/authRoutes");
 const cookieParser = require("cookie-parser");
@@ -20,6 +20,11 @@ app.get("/", (req, res) => {
 });
 app.use("/api", apiRoutes);
 app.use("/auth", authRoutes);
+app.all("*", (req, res) => {
+  res
+    .status(404)
+    .send({ message: "Sorry, the route you are going to does not exist" });
+});
 
 // Server
 app.listen(port, () => {
