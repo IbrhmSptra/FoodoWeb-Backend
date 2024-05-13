@@ -72,7 +72,7 @@ const addBookmark = async (uuid, food_id) => {
 
 //to get all bookmark user data
 const getAllBookmark = async (page, price = "asc", order, rating, uuid) => {
-  const showData = 10;
+  const showData = 12;
   const startIndex = (page - 1) * showData;
   const endIndex = startIndex + showData;
   const totalResults = await prisma.bookmark.count({

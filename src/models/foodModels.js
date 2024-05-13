@@ -3,7 +3,7 @@ const { getTotalOrder } = require("./orderModels");
 
 //get all food -----------------------------------------------
 const getAllFood = async (page, price = "asc", order, rating) => {
-  const showData = 10;
+  const showData = 12;
   const startIndex = (page - 1) * showData;
   const endIndex = startIndex + showData;
   const totalResults = await prisma.food.count();
@@ -115,7 +115,7 @@ const getAllFoodbyCategory = async (
   rating,
   category_id
 ) => {
-  const showData = 10;
+  const showData = 12;
   const startIndex = (page - 1) * showData;
   const endIndex = startIndex + showData;
   const totalResults = await prisma.food.count({

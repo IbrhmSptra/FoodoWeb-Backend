@@ -206,7 +206,7 @@ const getTotalRating = async (food_id) => {
 
 //to get all order user data ----------------------------------------------
 const getAllOrder = async (page, price, date = "desc", uuid) => {
-  const showData = 10;
+  const showData = 12;
   const startIndex = (page - 1) * showData;
   const endIndex = startIndex + showData;
   const totalResults = await prisma.order.count({
