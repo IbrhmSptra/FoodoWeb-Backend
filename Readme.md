@@ -203,6 +203,43 @@ Response Error :
 }
 ```
 
+<br>
+<hr>
+<br>
+
+Endpoint : **GET /api/categories/:id**
+
+Summary : To get one category by id
+
+Request :
+
+- Name : id <br>
+  In : params <br>
+  Description : spesific id for category <br>
+  Required : true <br>
+  Type : Int <br>
+
+Response Success :
+
+```JSON
+{
+   "data": {
+        "id": 21,
+        "name": "Nusantara",
+        "header_image": "https://qqnkeeuttacyfctgebzc.supabase.co/storage/v1/object/sign/WebFoodo/Kategori/Banner/Nusantara.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJXZWJGb29kby9LYXRlZ29yaS9CYW5uZXIvTnVzYW50YXJhLnBuZyIsImlhdCI6MTcwOTg4Nzg3MiwiZXhwIjoxNzcyOTU5ODcyfQ.8YywnlmJsDq_0Abpos3MX0CHynoke1gEYgm87LuxCtc&t=2024-03-08T08%3A51%3A12.688Z",
+        "image": "https://qqnkeeuttacyfctgebzc.supabase.co/storage/v1/object/sign/WebFoodo/Kategori/nusantara.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJXZWJGb29kby9LYXRlZ29yaS9udXNhbnRhcmEucG5nIiwiaWF0IjoxNzA5NjM5NjIxLCJleHAiOjE3NzI3MTE2MjF9.f5dnmz8XE-zmdbyomuaJQkloaoYm0qZSoU6LYlCye3U&t=2024-03-05T11%3A53%3A42.072Z"
+    }
+}
+```
+
+Response Error :
+
+```JSON
+{
+   "message" : "Data not found"
+}
+```
+
 ### - **Food**
 
 **Endpoint** : **GET /api/food?page=1**

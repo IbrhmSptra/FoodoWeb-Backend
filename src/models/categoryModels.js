@@ -5,4 +5,13 @@ const getData = async () => {
   return data;
 };
 
-module.exports = { getData };
+const getCategoryById = async (id) => {
+  const data = await prisma.category.findUnique({
+    where: {
+      id: id,
+    },
+  });
+  return data;
+};
+
+module.exports = { getData, getCategoryById };
