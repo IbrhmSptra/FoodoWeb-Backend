@@ -9,7 +9,7 @@ const authRoutes = require("./src/routes/authRoutes");
 const cookieParser = require("cookie-parser");
 
 // Middlewares
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "*", credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());

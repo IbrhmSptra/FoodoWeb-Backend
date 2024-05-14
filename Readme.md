@@ -142,7 +142,7 @@ Response Error :
 <hr>
 <br>
 
-**Endpoint** : **POST /auth/logout**
+**Endpoint** : **DELETE /auth/logout**
 
 Summary : route for logout and remove cookie token from user
 
@@ -167,6 +167,40 @@ Response Error :
    "message" : "Unauthorized user"
 }
 ```
+
+**Endpoint** : **GET /auth/validate**
+
+Summary : route for verify JWT from cookie HTTP-Only
+
+Request :
+
+- Name : token <br>
+  In : cookies <br>
+  Description : JWT auth user <br>
+  Required : true <br>
+  Type : String <br>
+
+Response Success :
+
+````JSON
+{
+    "message": "valid",
+    "user": {
+        "uuid": "170df627-bce2-4feb-81ce-1fedda2b718d",
+        "email": "ibrhmsptra@gmail.com",
+        "username": "IbrhmSptra",
+        "iat": 1715672235,
+        "exp": 1716277035
+    }
+}
+
+Response Error :
+
+```JSON
+{
+   "message" : "Unauthorized user"
+}
+````
 
 ### - **Categories**
 

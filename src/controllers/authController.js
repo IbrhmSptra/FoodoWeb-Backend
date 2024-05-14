@@ -90,4 +90,9 @@ const logout = (req, res) => {
   }
 };
 
-module.exports = { register, login, logout };
+const validate = (req, res) => {
+  const user = req.user;
+  res.status(200).json({ message: "valid", user });
+};
+
+module.exports = { register, login, logout, validate };
