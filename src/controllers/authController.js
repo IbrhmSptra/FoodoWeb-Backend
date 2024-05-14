@@ -62,8 +62,9 @@ const login = async (req, res) => {
     res.cookie("token", token, {
       maxAge: days,
       httpOnly: true,
-      secure: false, // Ensure this is false for HTTP (localhost)
+      secure: isSecure, // Ensure this is false for HTTP (localhost)
       sameSite: "None", // Cross-origin requests
+      domain: isSecure ? "foodo.vercel.app" : "localhost",
     });
     //send user info non credentials
     res.status(200).send({
