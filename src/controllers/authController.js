@@ -62,7 +62,7 @@ const login = async (req, res) => {
     res.cookie("token", token, {
       maxAge: days,
       httpOnly: true,
-      secure: isSecure, // Ensure this is false for HTTP (localhost)
+      secure: false, // Ensure this is false for HTTP (localhost)
       sameSite: "None", // Cross-origin requests
     });
     //send user info non credentials
