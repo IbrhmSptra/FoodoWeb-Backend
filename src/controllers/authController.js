@@ -61,7 +61,7 @@ const login = async (req, res) => {
       maxAge: days,
       httpOnly: true,
       secure: true,
-      sameSite: "Strict",
+      sameSite: "Lax",
     });
     //send user info non credentials
     res.status(200).send({
