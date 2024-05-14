@@ -59,6 +59,9 @@ const login = async (req, res) => {
     //set cookie for remember user info with jwt
     res.cookie("token", token, {
       maxAge: days,
+      httpOnly: true,
+      secure: true,
+      sameSite: "Strict",
     });
     //send user info non credentials
     res.status(200).send({
