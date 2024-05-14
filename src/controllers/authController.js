@@ -60,8 +60,8 @@ const login = async (req, res) => {
     res.cookie("token", token, {
       maxAge: days,
       httpOnly: true,
-      secure: true, // Ensure this is false for HTTP (localhost)
-      sameSite: "None", // Cross-origin requests
+      secure: false, // Ensure this is false for HTTP (localhost)
+      sameSite: "lax", // Cross-origin requests
     });
     //send user info non credentials
     res.status(200).send({
