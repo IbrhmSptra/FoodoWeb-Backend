@@ -31,6 +31,8 @@ const login = async (req, res) => {
   try {
     const { email, password } = req.body;
     const account = await getAccount(email);
+    const isSecure =
+      req.headers.origin === "https://foodo.vercel.app" ? true : false;
 
     // account doesnt find
     if (!account) {
@@ -60,7 +62,8 @@ const login = async (req, res) => {
     res.cookie("token", token, {
       maxAge: days,
       httpOnly: true,
-      secure: true,
+      secure: isSecure, // Ensure this is false for HTTP (localhost)
+      sameSite: "None", // Cross-origin requests
     });
     //send user info non credentials
     res.status(200).send({
