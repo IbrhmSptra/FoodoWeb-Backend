@@ -9,9 +9,6 @@ const prisma = require("../db");
 const foodSearch = async (req, res) => {
   try {
     const query = req.query.query || "";
-    if (!query) {
-      return res.status(400).json({ message: "query is empty" });
-    }
     const food = await findFood(query);
     res.status(200).json({
       data: food.map((i) => {
@@ -81,7 +78,11 @@ const getFoodById = async (req, res) => {
           },
         },
         category: true,
-        method: true,
+        method: {
+          orderBy: {
+            step: "asc",
+          },
+        },
         ingredients: true,
       },
     });

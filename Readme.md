@@ -182,7 +182,7 @@ Request :
 
 Response Success :
 
-````JSON
+```JSON
 {
     "message": "valid",
     "user": {
@@ -193,6 +193,7 @@ Response Success :
         "exp": 1716277035
     }
 }
+```
 
 Response Error :
 
@@ -200,7 +201,7 @@ Response Error :
 {
    "message" : "Unauthorized user"
 }
-````
+```
 
 ### - **Categories**
 
