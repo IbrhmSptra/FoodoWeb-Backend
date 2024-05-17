@@ -12,7 +12,7 @@ const cookieParser = require("cookie-parser");
 app.use(
   cors({
     credentials: true,
-    origin: "https://foodo.vercel.app",
+    origin: "https://fe-foodo.vercel.app/auth",
   })
 );
 app.use(express.json());
