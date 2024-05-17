@@ -926,9 +926,9 @@ Request :
   Required : true <br>
   Type : Int <br>
 
-- Name : food_id <br>
+- Name : id <br>
   In : params <br>
-  Description : id of food want to order by user <br>
+  Description : order id <br>
   Required : true <br>
   Type : Int <br>
 

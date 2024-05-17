@@ -1,6 +1,6 @@
 const prisma = require("../db");
 
-// Membuat pesanan baru dan mendapatkan detail makanan
+// Membuat pesanan baru
 const createOrder = async (user_uuid, food_id, location) => {
   // Membuat pesanan baru
   const newOrder = await prisma.order.create({
@@ -222,11 +222,11 @@ const getAllOrder = async (page, price, date = "desc", uuid) => {
       id: true,
       food_id: true,
       date: true,
+      rating: true,
       food: {
         select: {
           name: true,
           image: true,
-          rating: true,
         },
       },
     },
@@ -252,7 +252,7 @@ const getAllOrder = async (page, price, date = "desc", uuid) => {
           image: order[i].food.image,
           date: order[i].date,
           price: priceFood[j]._sum.price,
-          rating: order[i].food.rating,
+          rating: order[i].rating,
         };
         data.push(payload);
       }
