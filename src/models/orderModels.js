@@ -222,11 +222,11 @@ const getAllOrder = async (page, price, date = "desc", uuid) => {
       id: true,
       food_id: true,
       date: true,
+      rating: true,
       food: {
         select: {
           name: true,
           image: true,
-          rating: true,
         },
       },
     },

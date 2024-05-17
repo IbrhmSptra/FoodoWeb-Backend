@@ -182,7 +182,7 @@ Request :
 
 Response Success :
 
-````JSON
+```JSON
 {
     "message": "valid",
     "user": {
@@ -193,6 +193,7 @@ Response Success :
         "exp": 1716277035
     }
 }
+```
 
 Response Error :
 
@@ -200,7 +201,7 @@ Response Error :
 {
    "message" : "Unauthorized user"
 }
-````
+```
 
 ### - **Categories**
 
@@ -925,9 +926,9 @@ Request :
   Required : true <br>
   Type : Int <br>
 
-- Name : food_id <br>
+- Name : id <br>
   In : params <br>
-  Description : id of food want to order by user <br>
+  Description : order id <br>
   Required : true <br>
   Type : Int <br>
 
