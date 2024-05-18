@@ -252,7 +252,7 @@ const getAllOrder = async (page, price, date = "desc", uuid) => {
           image: order[i].food.image,
           date: order[i].date,
           price: priceFood[j]._sum.price,
-          rating: order[i].food.rating,
+          rating: order[i].rating,
         };
         data.push(payload);
       }
