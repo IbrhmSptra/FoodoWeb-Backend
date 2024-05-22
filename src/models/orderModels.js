@@ -113,7 +113,8 @@ const findOrderDetail = async (uuid, order_id) => {
       user_uuid: uuid,
       id: order_id,
     },
-    include: {
+    select: {
+      rating: true,
       food: {
         select: {
           id: true,
@@ -153,6 +154,7 @@ const findOrderDetail = async (uuid, order_id) => {
   const data = {
     id: order.id,
     location: order.location,
+    rating: order.rating,
     date: order.date,
     food_id: order.food_id,
     name: order.food.name,

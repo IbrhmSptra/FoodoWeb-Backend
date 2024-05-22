@@ -1075,6 +1075,7 @@ Response Success :
    "data" : {
          "id" : 1,
          "location" : "Jakarta Timur",
+         "rating" : 5,
          "date" : "2024-04-16T05:01:13.613Z",
          "food_id" : 1,
          "name" : "Nasi Goreng",
